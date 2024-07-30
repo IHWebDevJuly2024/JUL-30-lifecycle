@@ -1,0 +1,33 @@
+#app-title {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.counter {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.btn-count {
+  background-color: aliceblue;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 6px 7px 25px -5px rgba(0, 0, 0, 0.75);
+  transition: 300ms;
+}
+
+.btn-count:hover {
+  transform: scale(1.2);
+  box-shadow: 16px 18px 25px -5px rgba(0, 0, 0, 0.75);
+}
+
+.container-counters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}

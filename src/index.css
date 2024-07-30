@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* preserve the width and height of the elements */
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background: rgb(151, 249, 174);
+  background: linear-gradient(
+    189deg,
+    rgba(151, 249, 174, 1) 0%,
+    rgba(52, 140, 69, 1) 93%,
+    rgba(32, 120, 37, 1) 99%
+  );
+}
+
+#root {
+  min-height: 100vh;
+}
