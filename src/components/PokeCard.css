@@ -1,10 +1,53 @@
 .card {
-    width: 10rem;
-    height: 10rem;
+  align-items: center;
+  backdrop-filter: blur(5px);
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 10rem;
+  justify-content: center;
+  list-style: none;
+  width: 10rem;
+  transition: 300ms;
+
+  animation-fill-mode: both;
+  animation-name: appear;
+  animation-range: entry 5% cover 30%;
+  animation-timeline: --display;
+  view-timeline-name: --display;
+
+  img {
+    height: 5rem;
+    width: 5rem;
+  }
+}
+
+.card:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.character {
+  height: 15rem;
+  img{
+    width: auto;
+    height: 80%;
+  };
+}
+
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 10%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
 }

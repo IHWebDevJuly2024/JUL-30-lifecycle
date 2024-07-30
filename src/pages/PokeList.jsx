@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { PokeCard } from "../components/PokeCard";
+import "./PokeList.css";
 
 export const PokeList = () => {
   const [pokeArray, setPokeArray] = useState([]);
@@ -17,6 +18,11 @@ export const PokeList = () => {
     fetch("https://pokeapi.co/api/v2/pokemon/")
       .then((response) => response.json())
       .then((jsonResponse) => {
+        setPokeArray(
+          jsonResponse.results.map((poke) => {
+            return { name: poke.name };
+          })
+        );
         jsonResponse.results.forEach((eachPokemon, index) => {
           fetch(eachPokemon.url)
             .then((pokeResponse) => pokeResponse.json())
@@ -33,8 +39,11 @@ export const PokeList = () => {
                     }
                 ]
             */
-
-              setPokeArray(jsonResponse.results);
+              setPokeArray((prevPokeArray) => {
+                const newPokeArray = [...prevPokeArray];
+                newPokeArray[index].img = pokeImage;
+                return newPokeArray;
+              });
             })
             .catch(() =>
               console.error("Sorry ,the fetch for the pokemon didn't work")
@@ -49,9 +58,11 @@ export const PokeList = () => {
       {pokeArray.length === 0 ? (
         <h2>Loading...</h2>
       ) : (
-        pokeArray.map((eachPokemon, index) => {
-          return <PokeCard eachPokemon={eachPokemon} key={index} />;
-        })
+        <ul className="container-cards">
+          {pokeArray.map((eachPokemon, index) => {
+            return <PokeCard eachPokemon={eachPokemon} key={index} />;
+          })}
+        </ul>
       )}
     </ul>
   );

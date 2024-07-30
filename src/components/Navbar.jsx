@@ -13,9 +13,15 @@ export const Navbar = () => {
       </NavLink>
       <NavLink
         className={({ isActive }) => (isActive ? "selected" : "")}
-        to="/list"
+        to="/pokemons"
       >
-        List
+        Pokemons
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "selected" : "")}
+        to="/characters"
+      >
+        Dragon ball
       </NavLink>
       <NavLink
         className={({ isActive }) => (isActive ? "selected" : "")}
